@@ -37,10 +37,8 @@ public class BoardDao {
 	private JDBCUtil jdbc = JDBCUtil.getInstance();
 
 	public List<Map<String, Object>> selectBoardList() {
-		String sql = "SELECT A.BOARD_NO, A.TITLE, A.CONTENT, B.USER_NAME, A.REG_DATE "
-				+ "FROM TB_JDBC_BOARD A "
-				+ "LEFT OUTER JOIN TB_JDBC_USER B "
-				+ "ON A.USER_ID = B.USER_ID " + "ORDER BY A.BOARD_NO ASC";
+		String sql = "SELECT A.BOARD_NO, A.TITLE, A.CONTENT, B.USER_NAME, A.REG_DATE " + "FROM TB_JDBC_BOARD A "
+				+ "LEFT OUTER JOIN TB_JDBC_USER B " + "ON A.USER_ID = B.USER_ID " + "ORDER BY A.BOARD_NO ASC";
 
 		return jdbc.selectList(sql);
 	}
@@ -52,8 +50,8 @@ public class BoardDao {
 		try {
 			con = DriverManager.getConnection(url, user, password);
 
-			String sql = "select board_no, title, content, user_id, reg_date "
-					+ "from tb_jdbc_board " + "where board_no = ?";
+			String sql = "select board_no, title, content, user_id, reg_date " + "from tb_jdbc_board "
+					+ "where board_no = ?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, boardNo);
 			rs = ps.executeQuery();
@@ -109,8 +107,7 @@ public class BoardDao {
 		try {
 			con = DriverManager.getConnection(url, user, password);
 
-			String sql = "update tb_jdbc_board " + "set title = ? "
-					+ ", content = ? " + "where board_no = ?";
+			String sql = "update tb_jdbc_board " + "set title = ? " + ", content = ? " + "where board_no = ?";
 
 			ps = con.prepareStatement(sql);
 			ps.setString(1, title);
@@ -185,8 +182,7 @@ public class BoardDao {
 		try {
 			con = DriverManager.getConnection(url, user, password);
 
-			String sql = "insert into tb_jdbc_board values("
-					+ "(select nvl(max(board_no), 0) + 1 from tb_jdbc_board)"
+			String sql = "insert into tb_jdbc_board values(" + "(select nvl(max(board_no), 0) + 1 from tb_jdbc_board)"
 					+ ", ?, ?, ?, sysdate" + ")";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, title);

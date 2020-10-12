@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
- 
 //강사용 코딩임.
 public class JDBCUtil {
 
@@ -63,7 +62,7 @@ public class JDBCUtil {
 
 			while (rs.next()) {
 				row = new HashMap<>();
-				
+
 				for (int i = 1; i <= columnCount; i++) {
 					String key = md.getColumnName(i);
 					Object value = rs.getObject(i);

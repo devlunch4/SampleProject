@@ -39,23 +39,24 @@ public class Controller {
 			case View.LOGIN: // 1번을 선택하면 다음화면은 로그인 화면 등장
 				view = userService.login();
 				break;
-			case View.JOIN: // 로그인을 가져오면 조인이 됨.
+			case View.JOIN: // 로그인을 가져오면 조인이 됨.(회원가입 조인 메소드 호출)
 				view = userService.join();
 				break;
-			case View.BOARD_LIST:
+			case View.BOARD_LIST: // 게시판 보기
 				view = boardService.boardList();
 				break;
 			}
 		}
 	}
 
+	// 홈 메소드 선택 안내 화면 / 선택 인풋
 	private int home() {
 		System.out.println("-------------------------------------");
-		System.out.println("1.로그인\t2.회원가입\t0.프로그램종료");
+		System.out.println("1.로그인\t 2.회원가입\t 0.프로그램종료");
 		System.out.println("-------------------------------------");
 		System.out.println("번호입력>>");
 		int input = ScanUtil.nextInt();
-		switch (input) {
+		switch (input) { // 리턴하게되면 start 메소드로 이동 되며 해당 클래스와 메소드로 이동
 		case 1:
 			return View.LOGIN;
 		case 2:

@@ -23,7 +23,8 @@ public class UserService {
 	}
 
 	private UserDao userDao = UserDao.getInstance();
-	
+
+	// 회원가입 메소드
 	public int join() {
 		System.out.println("=======회원가입========");
 		System.out.println("아이디>>");
@@ -42,6 +43,7 @@ public class UserService {
 		param.put("PASSWORD", password);
 		param.put("USER_NAME", username);
 
+		// 입력값을 입력 메소드 클래스로 지정
 		int result = userDao.insertUser(param);
 
 		if (0 < result) {
@@ -52,6 +54,7 @@ public class UserService {
 		return View.HOME;
 	}
 
+	// 회원가입으로 형성된 사용자 정보를 통한 로그인 메소드
 	public int login() {
 		System.out.println("========로그인========");
 		System.out.println("아이디>");
@@ -65,14 +68,16 @@ public class UserService {
 
 		if (user == null) {
 			System.out.println("아이디 혹은 비밀번호를 잘못 입력했습니다");
+			System.out.println("홈화면으로 이동합니다.");
 		} else {
 			System.out.println("로그인 성공");
 			// 컨트롤러에 해당 사용자 정보 저장.
 			Controller.LoginUser = user;
 
 			return View.BOARD_LIST;
+			// 게시판 리스트를 보기위해 컨트롤러 클래스에서 게시판리스트 호출을 위한 리턴
 		}
-		return View.LOGIN;
+		return View.HOME;
 
 	}
 }
