@@ -2,13 +2,11 @@ SampleProject _ 2020.10
 ======================
 ## 1.로그인>게시글 조회> 게시글 수정> 게시글 등록
 
-![sampleProject01](https://user-images.githubusercontent.com/70561423/104798777-b1c10180-580c-11eb-807c-0033d0a366f3.png)
-
-
+![Screenshot](sampleProject01.png){: width="100" height="100"}
 
 ## 2.회원가입>로그인>로그아웃>프로그램 종료
 
-![Screenshot](sampleProject02.png)
+![Screenshot](sampleProject02.png){: width="100" height="100"}
 
 
 ## 추가 참고
