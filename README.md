@@ -6,9 +6,3 @@ SampleProject _ 2020.10
 
 ## 2.회원가입>로그인>로그아웃>프로그램 종료
 <img src = "./sampleProject02.png" width="40%">
-
-
-## 추가 참고
-```
-pdf FILE
-```
